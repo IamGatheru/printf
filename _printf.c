@@ -35,7 +35,7 @@ int _printf(const char *format, ...)
 			}
 			else if (*format == 'c')
 			{
-				char c = va_arg(list_of_args, int);
+				char c = va_arg(list_of_args, char);
 
 				write(1, &c, 1);
 				chara_print++;
@@ -57,3 +57,20 @@ int _printf(const char *format, ...)
 
 	return (chara_print);
 }
+/**
+ * _strlen - returns length of a string
+ * @s : the string
+ * Return: string len
+ */
+int _strlen(char *s)
+{
+	int len = 0;
+
+	while (*s != '\0')
+	{
+		len++;
+		s++;
+	}
+	return (len);
+}
+
